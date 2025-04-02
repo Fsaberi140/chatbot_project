@@ -23,4 +23,5 @@ async def upload_document(file: UploadFile):
         return {"error": "Unsupported file format"}
 
     db.documents.insert_one({"name": file.filename, "content": content})
+
     return {"message": "Document uploaded successfully"}
